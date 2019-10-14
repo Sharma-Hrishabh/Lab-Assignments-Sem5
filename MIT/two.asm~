@@ -1,0 +1,11 @@
+
+;<Program title>
+
+lda 2000H
+mov B,A
+lda 4000H
+sta 2000H
+mov A,B
+sta 4000H
+
+hlt

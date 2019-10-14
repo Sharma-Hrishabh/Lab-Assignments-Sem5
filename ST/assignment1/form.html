@@ -1,0 +1,49 @@
+<! DOCTYPE HTML>
+<html>
+<head>
+<title>Form</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">	
+</head>
+<body>
+	<h1 class="text-center">FORM GENERATOR</h1>
+	<div class="container" id="container" style="margin-left:45%;margin-right: 50%;margin-top:10%;">
+
+	</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script>
+
+      function addField(){
+            var number = sessionStorage['no-of-fields']
+            var container = document.getElementById("container");
+            while (container.hasChildNodes()) {
+                container.removeChild(container.lastChild);
+            }
+            container.appendChild(document.createTextNode(sessionStorage['form-title']))
+            container.appendChild(document.createElement("br"));
+            container.appendChild(document.createElement("br"));
+
+            for (i=0;i<number;i++){
+                container.appendChild(document.createTextNode(sessionStorage['member'+i+'input-name']))
+            container.appendChild(document.createElement("br"));
+
+                var input = document.createElement("input");
+                input.type = sessionStorage['member'+i+'input-type']
+                input.name = sessionStorage['member'+i+'input-name']
+                container.appendChild(input);
+                container.appendChild(document.createElement("br"));
+            }
+
+            document.getElementById('container').style.color = sessionStorage['font-color']
+            document.getElementById('container').style.fontFamily = sessionStorage['font-color']
+            var button = container.appendChild(document.createElement("input"));
+            button.type = "submit"
+
+        }
+
+window.onload = function() {
+  addField();
+};
+
+</script>
+</body>
+</html>

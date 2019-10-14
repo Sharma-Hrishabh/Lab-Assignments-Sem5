@@ -1,0 +1,57 @@
+<! DOCTYPE HTML>
+<html>
+<head>
+<title>Form</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">	
+</head>
+<body>
+	<h1 class="text-center">FORM GENERATOR</h1>
+  <button type="create" onclick="addField()" id="add-field" class="btn btn-primary">Add</button>
+  <button onclick="createForm()" id="createform"><a href="./form.html">Create</a></button>
+	<div class="container" id="container">
+	</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script>
+	  
+
+      function addField(){
+            var number = sessionStorage['no-of-fields']
+            var container = document.getElementById("container");
+            while (container.hasChildNodes()) {
+                container.removeChild(container.lastChild);
+            }
+            for (i=0;i<number;i++){
+                container.appendChild(document.createTextNode("Member " + (i+1)))
+                var input = document.createElement("input");
+                input.type = "text";
+                input.name = "member" + i;
+                container.appendChild(input);
+                var input2 = document.createElement("input");
+                input2.type = "text";
+                input2.name = "member" + i;
+                container.appendChild(input2);
+                container.appendChild(document.createElement("br"));
+            }
+        }
+
+
+        function createForm(){
+                      var number = sessionStorage['no-of-fields']
+
+              for (i=0;i<number;i++){
+
+                var member  = "member"+i
+                var inputType = document.getElementsByName(member)[0].value
+                var inputName = document.getElementsByName(member)[1].value
+
+                sessionStorage['member'+i+'input-name']=inputName
+                sessionStorage['member'+i+'input-type']=inputType
+
+            }
+          
+        }
+
+	
+</script>
+</body>
+</html>

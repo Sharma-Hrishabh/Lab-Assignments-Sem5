@@ -1,0 +1,17 @@
+
+;<Program title>
+
+mvi A,32H
+sta 4000H
+mvi A,32H
+sta 4001H
+
+
+lxi H,4000H
+mov A,M
+inx H
+add M
+inx H
+mov M,A
+
+hlt

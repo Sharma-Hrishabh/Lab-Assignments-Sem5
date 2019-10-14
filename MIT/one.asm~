@@ -1,0 +1,7 @@
+
+;<Program title>
+
+MVI A, 32H 
+STA 4000H  
+
+HLT

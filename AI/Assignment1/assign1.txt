@@ -1,0 +1,15 @@
+parent(albert,peter).
+parent(jim,X).
+parent(X,brian).
+grandparent(irene,brian).
+grandparent(irene,X).
+older(X,pat).
+older(daren,X).
+sibling(sandra,X).
+sibling(X,sandra),older(X,sandra),male(X).
+predecessor(X,kyle).
+sister(kate,X).
+
+
+aggregate_all(count, male(X), N).
+aggregate_all(count, female(X), N).
