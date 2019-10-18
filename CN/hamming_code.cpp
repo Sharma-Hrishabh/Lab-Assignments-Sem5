@@ -12,7 +12,7 @@ int main()
         code.push_back(code_word[i] - '0');
     int max_pow = floor(log2(code_word.length())) + 1;
     vector< int > ans;
-    for(int i=0; i<=max_pow; i++){
+    for(int i=0; i<max_pow; i++){
         int num = pow(2,i);
         if(i == 0)
             num = 1;
@@ -36,9 +36,8 @@ int main()
         exp++;
     }
     if(bit == 0){
-        cout<<"The given hamming code is error free"<<endl;
+        cout<<"There is no error in the code word"<<endl;
     }else{
-        cout<<"Error in the "<<bit<<"th bit "<<endl;
+        cout<<"There is an error in the "<<bit<<" bit of the code word."<<endl;
     }
 }
-11
