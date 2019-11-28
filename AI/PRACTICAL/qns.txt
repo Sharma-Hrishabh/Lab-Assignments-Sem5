@@ -1,0 +1,4 @@
+
+(1) a.if number of Elements in the list are Even than Add all the numbers in the list else display the list.
+
+ b.Given four queens problem initial state of two queens is (2,4). find number of possible solutions for rest of the queens.

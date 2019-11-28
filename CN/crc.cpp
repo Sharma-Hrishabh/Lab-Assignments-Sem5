@@ -9,6 +9,7 @@ bool check(string s){
     return 1;
 }
 
+
 string solveCRC(string message,string key){
     int m=key.length();
     int n=message.length();
@@ -32,7 +33,7 @@ string solveCRC(string message,string key){
     // last One
     string ans="";
     for(int i=nop-1,j=0;i<n && j<m;i++,j++){
-            if(i!=nop-1)
+            if(i!=nop)
             if(message[i] == key[j]){
                 ans+='0';
             }else{

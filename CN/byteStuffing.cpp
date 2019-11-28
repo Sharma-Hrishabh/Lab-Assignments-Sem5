@@ -23,7 +23,7 @@ int main()
 
     string f = "01111110";
     string esc = "01010101";
-    string code_word;
+    string code_word;       
     bool fl = false;
     for(int i=0; i<8; i++)
         code_word.push_back(f[i]);
@@ -52,7 +52,7 @@ int main()
             if(s[j] == esc[j-i]){
                 cnt++;
             }
-        }
+}
         if(cnt == 8){
             code_word.push_back('0');
             code_word.push_back('1');
@@ -74,6 +74,8 @@ int main()
             code_word.push_back(s[i]);
         }
     }
+
+
     for(int i=0; i<8; i++)
         code_word.push_back(f[i]);
     cout<<"The codeword generated including flags is:\n"<<code_word<<endl;

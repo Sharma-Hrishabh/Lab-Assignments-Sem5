@@ -16,4 +16,6 @@ canget(State1) :-
 		canget(State2).
 
 
+
 %?- canget(state(atdoor,onfloor,atwindow,hasnot)).
+%?- canget(state(atdoor,onbox,atdoor,hasnot)).

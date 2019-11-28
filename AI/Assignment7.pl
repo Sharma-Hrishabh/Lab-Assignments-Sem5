@@ -5,8 +5,10 @@ remove(X,[X|R],R).
 remove(X,[H|T],[H|T1]):-remove(X,T,T1).
 
 
+
 solve(P) :-
      permutation([1,2,3,4],P),
+     member([2,4,1,3],P),
      combine([1,2,3,4],P,S,D),
      all_diff(S),
      all_diff(D).
